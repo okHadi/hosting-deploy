@@ -16,7 +16,7 @@ jobs:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
         with:
-          publish-dir: "./" # directroy in which the build  files are present
+          publish-dir: "./" # d irectroy in which the build  files are present
           production-branch: master
           deploy-message: "Deploy from GitHub Actions"
         env:
