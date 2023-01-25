@@ -1,0 +1,28 @@
+# .github/workflows/netlify.yml
+name: Build and Deploy to Netlify
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build
+      - run: echo Build command here
+      # ( Build to ./dist or other directory... )
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.2
+        with:
+          publish-dir: "./" # directroy in which the build files are present
+          production-branch: master
+          deploy-message: "Deploy from GitHub Actions"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          #To find your authentication token, go to the "Settings" section of your Netlify account, then click on the "Identity" tab, and then "Personal access tokens". From there, you can create a new token and give it a name, like "GitHub Actions".
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          #To find your site ID, go to the "Sites" section of your Netlify account, then click on the site you want to deploy, and then "Settings". The site ID is located at the bottom of the page, under the "Site details" section.
+        timeout-minutes: 1
