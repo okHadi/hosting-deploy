@@ -24,5 +24,5 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           #To find your authentication token, go to the "Settings" section of your Netlify account, then click on the "Identity" tab, and then "Personal access tokens". From there, you can create a new token and give it a name, like "GitHub Actions".
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          #To find your site ID, go to the "Sites" section of your Netlify account, then click on the site you want to deploy, and then "Settings". The site ID is located at the bottom of the page, under the "Site details" section.
+          #To find your site ID, go to the "Sites"  section of your Netlify account, then click on the site you want to deploy, and then "Settings". The site ID is located at the bottom of the page, under the "Site details" section.
         timeout-minutes: 1
